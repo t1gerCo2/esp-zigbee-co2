@@ -69,5 +69,5 @@ W (484162) ESP_ZB_CO2: Receive Zigbee action(0x1005) callback
  
 ## Pairing with HA box Jeedom 
 
-
+![alt text](https://github.com/mycael/esp-zigbee-co2/blob/main/jeedom.jpg?raw=true)
 
