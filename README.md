@@ -1,2 +1,73 @@
-# esp-zigbee-co2
-ESP-C6 code with SCD4x sensor for CO2 ppm measurement.
+| Supported Targets | ESP32-H2 		| 	ESP32-C6 	|
+| ----------------- | not tested 	| 	-------- 	|
+
+# CO2/Temperature/humidity sensor
+
+This test code shows how to configure Zigbee end device and use it as a HA CO2 sensor. The ESP32-C6 is wired with a SCD4x sensor from Sensirion
+
+## Hardware Required
+
+* One development board with ESP32-H2 SoC acting as Zigbee end-device 
+* A USB cable for power supply and programming
+* A Sensirion SCD4x sensor wired in I2C (SCL --> pin 7 ; SDA --> pin 6)
+
+## Configure the project
+
+Before project configuration and build, make sure to set the correct chip target using `idf.py set-target TARGET` command.
+
+## Erase the NVRAM 
+
+Before flash it to the board, it is recommended to erase NVRAM using `idf.py -p PORT erase-flash`
+
+## Build and Flash
+
+Build the project, flash it to the board, and start the monitor tool to view the serial output by running `idf.py -p PORT flash monitor`.
+
+
+## Example Output
+
+As you run the example, you will see the following log:
+
+```
+I (478) main_task: Returned from app_main()
+I (479) ESP_ZB_CO2: ZDO signal: ZDO Config Ready (0x17), status: ESP_FAIL
+I (482) ESP_ZB_CO2: Initialize Zigbee stack
+I (3348) ESP_ZB_CO2: Deferred driver initialization successful
+I (3351) ESP_ZB_CO2: STOP mesures périodiques OK !
+I (3400) ESP_ZB_CO2: Device started up in non factory-reset mode
+I (3400) ESP_ZB_CO2: Device rebooted
+I (3502) ESP_ZB_CO2: START mesures périodiques OK !
+I (70630) ESP_ZB_CO2: ZDO signal: ZDO Device Unavailable (0x3c), status: ESP_OK
+I (110764) ESP_ZB_CO2: ZDO signal: ZDO Device Unavailable (0x3c), status: ESP_OK
+I (123555) ESP_ZB_CO2: CO2: 824 Hum: 77.7 Tmp: 19.4
+I (123555) ESP_ZB_CO2: Set attribute 0 in cluster 1037 succeded
+I (123605) ESP_ZB_CO2: Set attribute 0 in cluster 1026 succeded
+I (123605) ESP_ZB_CO2: Set attribute 0 in cluster 1029 succeded
+I (150899) ESP_ZB_CO2: ZDO signal: ZDO Device Unavailable (0x3c), status: ESP_OK
+W (161302) ESP_ZB_CO2: Receive Zigbee action(0x1005) callback
+W (181173) ESP_ZB_CO2: Receive Zigbee action(0x1005) callback
+I (243609) ESP_ZB_CO2: CO2: 809 Hum: 77.2 Tmp: 19.5
+I (243610) ESP_ZB_CO2: Set attribute 0 in cluster 1037 succeded
+I (243660) ESP_ZB_CO2: Set attribute 0 in cluster 1026 succeded
+I (243660) ESP_ZB_CO2: Set attribute 0 in cluster 1029 succeded
+W (243831) ESP_ZB_CO2: Receive Zigbee action(0x1005) callback
+W (244048) ESP_ZB_CO2: Receive Zigbee action(0x1005) callback
+I (363664) ESP_ZB_CO2: CO2: 804 Hum: 76.5 Tmp: 19.4
+I (363665) ESP_ZB_CO2: Set attribute 0 in cluster 1037 succeded
+I (363715) ESP_ZB_CO2: Set attribute 0 in cluster 1026 succeded
+I (363715) ESP_ZB_CO2: Set attribute 0 in cluster 1029 succeded
+W (363889) ESP_ZB_CO2: Receive Zigbee action(0x1005) callback
+W (364265) ESP_ZB_CO2: Receive Zigbee action(0x1005) callback
+I (483719) ESP_ZB_CO2: CO2: 807 Hum: 75.9 Tmp: 19.4
+I (483720) ESP_ZB_CO2: Set attribute 0 in cluster 1037 succeded
+I (483770) ESP_ZB_CO2: Set attribute 0 in cluster 1026 succeded
+I (483770) ESP_ZB_CO2: Set attribute 0 in cluster 1029 succeded
+W (483944) ESP_ZB_CO2: Receive Zigbee action(0x1005) callback
+W (484162) ESP_ZB_CO2: Receive Zigbee action(0x1005) callback
+
+```
+ 
+## Pairing with HA box Jeedom 
+
+
+
