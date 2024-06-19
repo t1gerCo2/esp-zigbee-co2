@@ -1,6 +1,5 @@
-| Supported Targets | ESP32-H2 		| 	ESP32-C6 	|
+| Supported Targets | 	ESP32-C6 	|
 
-| ----------------- | not tested 	| 	-------- 	|
 
 # CO2/Temperature/humidity sensor
 
