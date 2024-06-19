@@ -1,9 +1,18 @@
 | Supported Targets | 	ESP32-C6 	|
 
+---------------------------------------------------------
+Warning and disclaimer : 
+this code still needs to be improved and cleaned up from the various tests. It is provided for those who want a working basis for using I2C in “light sleep” mode.
+---------------------------------------------------------
 
 # CO2/Temperature/humidity sensor
 
-This test code shows how to configure Zigbee end device and use it as a HA CO2 sensor. The ESP32-C6 is wired with a SCD4x sensor from Sensirion
+This test code shows how to configure Zigbee end device and use it as a HA CO2 sensor. 
+- The ESP32-C6 is wired with a SCD4x sensor from Sensirion.
+- The code use light sleep mode to save batteries.
+- Mean consumption is approximately 7mA. (This measure is not precise)
+- Value are read from the sensor each 2 minutes and a zigbee report is done if the measure is different than the previous.
+
 
 ## Hardware Required
 
