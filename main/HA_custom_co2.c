@@ -111,7 +111,7 @@ void SCD40_task(void *pvParameters)
     if(ret != ESP_OK) ESP_LOGW(TAG, "Problème START mesures périodiques SCD40...");
     else ESP_LOGI(TAG, "START mesures périodiques OK !");
 
-    //vTaskDelay(5500 / portTICK_PERIOD_MS);      // attente 5s pour que la première mesure soit accessible.
+    //vTaskDelay(5500 / portTICK_PERIOD_MS);      // wait 5s for the first measurement to be accessible.
 
     //esp_zb_sleep_enable(true);
 
