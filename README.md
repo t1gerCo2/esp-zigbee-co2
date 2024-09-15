@@ -35,7 +35,7 @@ Build the project, flash it to the board, and start the monitor tool to view the
 
 ## Example Output
 
-To enable text output in ligth sleep us menuconfig
+To enable text output in ligth sleep use menuconfig
 
 Component config  ->  ESP-Driver:USB Serial/JTAG Configuration -> [*] Don't enter the automatic light sleep when USB Serial/JTAG port is connected
 
