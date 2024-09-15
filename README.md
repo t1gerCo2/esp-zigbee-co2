@@ -24,7 +24,7 @@ This test code shows how to configure Zigbee end device and use it as a HA CO2 s
 ## Todo
 * Disable automatic_self_calibration, automatic_self_calibration automatically reset to lowest value every week on scd4x
 * Enable forced_recalibration on demand, from push button on board , with led flash for confirmation.
-* Enable low power periodic measurement mode (1 measurement every 2 minutes) for lower power consumtion. 0x21ac
+* Enable low power periodic measurement mode (1 measurement every 30 seconds) for lower power consumtion. 0x21ac
 
 ## Configure the project
 
