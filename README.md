@@ -11,7 +11,7 @@ This test code shows how to configure Zigbee end device and use it as a HA CO2 s
 - The ESP32-C6 is wired with a SCD4x sensor from Sensirion.
 - The code use light sleep mode to save batteries.
 - Mean consumption is approximately 7mA. (This measure is not precise,esp32-c6)
-- Mean consumption is approximately 15mA @3.3v. (This measure is not precise,scd40)
+- Mean consumption is approximately 15mA @3.3v or 3.2mA @3.3v in low power mode. (From data sheet,scd40)
 - Value are read from the sensor each 2 minutes and a zigbee report is done if the measure is different than the previous.
 
 
