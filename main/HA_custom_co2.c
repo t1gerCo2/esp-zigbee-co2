@@ -79,7 +79,7 @@ void app_main(void)
 static DRAM_ATTR esp_pm_lock_handle_t s_pm_lock;
 
 /**
- * @brief Tâche d'initialisation du SCD40 et de lecture des mesures
+ * @brief SCD40 initialization and measurement reading task
  */
 void SCD40_task(void *pvParameters)
 {
@@ -90,7 +90,7 @@ void SCD40_task(void *pvParameters)
     esp_zb_zcl_status_t status;
 
 
-    // Arrêt mesures périodiques au cas où elles aient été démarrées précédemment
+    // Stop periodic measurements in case they were started previously
     write_buf[0]=0x3f;
     write_buf[1]=0x86;
     ret = i2c_master_write_to_device(I2C_MASTER_NUM, SCD40_SENSOR_ADDR, write_buf, sizeof(write_buf), I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
@@ -99,11 +99,11 @@ void SCD40_task(void *pvParameters)
 
     vTaskDelay(100 / portTICK_PERIOD_MS);
 
-    // Démarrage mesures périodiques
+    // Starting periodic measurements
     write_buf[0]=0x21;
     write_buf[1]=0xb1;
 
-    // Démarrage mesures périodiques low power
+    // Starting periodic low power measurements
     //write_buf[0]=0x21;
     //write_buf[1]=0xac;
 
@@ -157,7 +157,7 @@ void SCD40_task(void *pvParameters)
 
 
 /**
- * @brief Tâche d'initialisation du zigbee
+ * @brief Zigbee initialization task
  */
 static void esp_zb_task(void *pvParameters)
 {
@@ -270,7 +270,7 @@ static void esp_zb_task(void *pvParameters)
 
 
 /**
- * @brief Configuration du sleep
+ * @Sleep configuration brief
  */
 static esp_err_t esp_zb_power_save_init(void)
 {
@@ -455,7 +455,7 @@ static esp_err_t zb_action_handler(esp_zb_core_action_callback_id_t callback_id,
 
 
 /**
- * @brief Gestion des status de retour pour la mise à jour des attributs
+ * @brief Managing return status for updating attributes
  */
 void status_management (esp_zb_zcl_status_t status, uint16_t cluster_id, uint16_t attr_id)
 {
