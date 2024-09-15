@@ -22,7 +22,7 @@ This test code shows how to configure Zigbee end device and use it as a HA CO2 s
 
 ## Configure the project
 
-Before project configuration and build, make sure to set the correct chip target using `idf.py set-target TARGET` command.
+Before project configuration and build, make sure to set the correct chip target using `idf.py set-target esp32-c6` command.
 
 ## Erase the NVRAM 
 
