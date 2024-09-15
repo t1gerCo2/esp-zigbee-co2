@@ -22,6 +22,7 @@ This test code shows how to configure Zigbee end device and use it as a HA CO2 s
 
 ## Todo
 *Disable automatic_self_calibration, automatic calibration automaticly reset lowest value evry week.
+
 *Enable forced_recalibration on demand, from push button on board or on_off switch true zigbee
 
 ## Configure the project
