@@ -16,7 +16,7 @@ This test code shows how to configure Zigbee end device and use it as a HA CO2 s
 
 ## Hardware Required
 
-* One development board with ESP32-H2 SoC acting as Zigbee end-device 
+* One development board with ESP32-C6 SoC acting as Zigbee end-device 
 * A USB cable for power supply and programming
 * A Sensirion SCD4x sensor wired in I2C (SCL --> pin 7 ; SDA --> pin 6)
 
