@@ -94,7 +94,7 @@ void SCD40_task(void *pvParameters)
     write_buf[0]=0x3f;
     write_buf[1]=0x86;
     ret = i2c_master_write_to_device(I2C_MASTER_NUM, SCD40_SENSOR_ADDR, write_buf, sizeof(write_buf), I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
-    if(ret != ESP_OK) ESP_LOGW(TAG, "Problème STOP mesures périodiques SCD40...");
+    if(ret != ESP_OK) ESP_LOGW(TAG, "Problem STOP periodic measurements SCD40...");
     else ESP_LOGI(TAG, "STOP mesures périodiques OK !");
 
     vTaskDelay(100 / portTICK_PERIOD_MS);
@@ -108,7 +108,7 @@ void SCD40_task(void *pvParameters)
     //write_buf[1]=0xac;
 
     ret = i2c_master_write_to_device(I2C_MASTER_NUM, SCD40_SENSOR_ADDR, write_buf, sizeof(write_buf), I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
-    if(ret != ESP_OK) ESP_LOGW(TAG, "Problème START mesures périodiques SCD40...");
+    if(ret != ESP_OK) ESP_LOGW(TAG, "Problem START periodic measurements SCD40...");
     else ESP_LOGI(TAG, "START mesures périodiques OK !");
 
     //vTaskDelay(5500 / portTICK_PERIOD_MS);      // wait 5s for the first measurement to be accessible.
