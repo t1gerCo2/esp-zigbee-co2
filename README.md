@@ -21,8 +21,8 @@ This test code shows how to configure Zigbee end device and use it as a HA CO2 s
 * A Sensirion SCD4x sensor wired in I2C (SCL --> pin 7 ; SDA --> pin 6)
 
 ## Todo
-* Disable automatic_self_calibration, automatic calibration automatically reset to lowest value every week on scd4x
-* Enable forced_recalibration on demand, from push button on board or on_off switch true zigbee
+* Disable automatic_self_calibration, automatic_self_calibration automatically reset to lowest value every week on scd4x
+* Enable forced_recalibration on demand, from push button on board
 
 ## Configure the project
 
